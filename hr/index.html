@@ -41,22 +41,30 @@
         
           <section data-background="img/phone.png">
             <h2 style="margin-bottom:1em">我们的产品</h2>
-            <div style="margin-bottom:2em;position:relative">
-              <img src="img/lims.png" width="96px" style="float:left;margin-top:-10px">
-              <div style="margin-left:120px">
+            <div style="margin-bottom:1em;position:relative">
+              <img src="img/lims.png" width="64px" style="float:left;margin-top:-10px">
+              <div style="margin-left:80px">
                 <h3>LIMS</h3>
                 <h4>科研实验室ERP</h4>
               </div>
             </div>
-            <div style="margin-bottom:2em;position:relative">
-              <img src="img/cf.png" width="96px" style="float:left;margin-top:-10px">
-              <div style="margin-left:120px">
+            <div style="margin-bottom:1em;position:relative">
+              <img src="img/cf.png" width="64px" style="float:left;margin-top:-10px">
+              <div style="margin-left:80px">
                 <h3>LIMS-CF</h3>
                 <h4>大型仪器共享管理</h4>
               </div>
             </div>
-            <div style="margin-bottom:6em;position:relative">
-              <div style="margin-left:120px">
+            <div style="margin-bottom:1em;position:relative">
+              <img src="img/billing.png" width="64px" style="float:left;margin-top:-10px">
+              <div style="margin-left:80px">
+                <h3>Billing</h3>
+                <h4>实验室快捷支付系统</h4>
+              </div>
+            </div>
+            <div style="margin-bottom:1em;position:relative">
+              <img src="img/mall.png" width="64px" style="float:left;margin-top:-10px">
+              <div style="margin-left:80px">
                 <h3>Mall</h3>
                 <h4>科研采购平台</h4>
               </div>
@@ -146,7 +154,7 @@
           <section data-background="img/notebook.png" data-transition="zoom" data-background-transition="fade">
             <div class="position">
               <h3>管理培训生</h3>
-              <p>您需要参加公司统一培训，然后在相关部门进行轮岗训练，参与该岗位的实际工作。</p>
+              <p style="margin-bottom:5px;">您需要参加公司统一培训，然后在相关部门进行轮岗训练，参与该岗位的实际工作。</p>
               <ol>
                 <li>学习能力强，勤奋踏实，吃苦耐劳，具有高度的责任心和执行能力；</li>
                 <li>良好的沟通和表达能力，具有良好的团队合作精神；</li>
@@ -157,25 +165,25 @@
             </div>
           </section>
 
-          <section data-background="#fff" data-background-transition="fade">
+          <section data-background="#3A475A" data-background-transition="fade">
             <div class="wall">
-              <div style="height:200px;background:url(img/workhere1.jpg) no-repeat;background-size:320px;margin-bottom:5px"></div>
+              <div style="height:200px;background:url(img/workhere1.jpg) no-repeat;background-size:360px;margin-bottom:5px"></div>
               <div style="float:right;width:100px;height:150px;background:url(img/workhere2.jpg) 0 -50px no-repeat;background-size:200px"></div>
               <div style="margin-right:110px;height:155px;position:relative">
                  <h3 style="transform:translate(-50%, -50%);left:50%;top:50%;position:absolute;white-space:nowrap">您将在这里工作</h3>
               </div>
-              <div style="height:200px;background:url(img/workhere3.jpg) no-repeat;background-size:320px"></div>
+              <div style="height:200px;background:url(img/workhere3.jpg) no-repeat;background-size:360px"></div>
             </div>
           </section>
                 
-          <section data-background="#fff">
+          <section data-background="#3A475A">
             <div class="wall">
-              <div style="height:200px;background:url(img/colleague1.jpg) no-repeat;background-size:320px;margin-bottom:5px"></div>
+              <div style="height:200px;background:url(img/colleague1.jpg) no-repeat;background-size:360px;margin-bottom:5px"></div>
               <div style="float:right;width:100px;height:150px;background:url(img/colleague2.jpg) 50% 50% no-repeat;background-size:200px"></div>
               <div style="margin-right:110px;height:155px;position:relative">
                  <h3 style="transform:translate(-50%, -50%);left:50%;top:50%;position:absolute;white-space:nowrap">您未来的伙伴</h3>
               </div>
-              <div style="height:200px;background:url(img/colleague3.jpg) no-repeat;background-size:320px"></div>
+              <div style="height:200px;background:url(img/colleague3.jpg) no-repeat;background-size:360px"></div>
             </div>
           </section>
 
@@ -197,8 +205,8 @@
           <section data-background="img/camera.png">
             <h2>联系方式</h2>
             <ul>
-              <li><span>电话:</span> 022-83719730</li>
-              <li><span>邮箱:</span> hr@geneegroup.com</li>
+              <li><span>电话:</span> <a href="callto:022-83719730">022-83719730</a></li>
+              <li><span>邮箱:</span> <a href="hr@geneegroup.com">hr@geneegroup.com</a></li>
               <li><span>地址:</span> 天津市南开区白堤路268号农科大厦4层</li>
             </ul>
           </section>
@@ -230,10 +238,10 @@
       minScale: 0.2,
       maxScale: 1.0,
 
-      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
       // transitionSpeed: 'fast',
         
-      backgroundTransition: 'slide',
+      backgroundTransition: 'convex',
         
       // Optional reveal.js plugins
       dependencies: [
