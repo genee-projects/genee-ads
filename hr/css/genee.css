@@ -59,6 +59,7 @@ body {
 
 .reveal h4 {
   font-size: 1em; 
+  letter-spacing:1px;
   font-weight:normal;
 }
 
@@ -215,7 +216,7 @@ body {
  * IMAGES
  *********************************************/
 .reveal section img {
-  margin: 15px 0px;
+  margin: 5px 0px;
   background: none;
   border: none;
   box-shadow: none;
@@ -279,15 +280,14 @@ body {
 .reveal img.avatar {
   background-color:#fff;
   border-radius:50%;
-  box-shadow:0 5px 0 #000;
+  box-shadow:0 4px 0 #222b39;
   width:100px;
   height:100px;
   position:absolute;
 }
 
 .reveal .position {
-	padding-left:16px;
-
+	padding-left:26px;
 }
 
 .reveal .position p {
@@ -317,7 +317,9 @@ body {
 }
 
 .reveal .wall img {
+	width:160px;
     margin: 0;
     padding: 0;
+	float:left;
     display: block;
 }
