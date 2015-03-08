@@ -16,7 +16,6 @@
 </head>
 
 <body>
-<img src="img/workhere1.png" width="0" height="0" style="display:block">
 <div class="reveal">
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
@@ -224,9 +223,10 @@
 
 </div>
 
+<script src="http://cdn.bootcss.com/zepto/1.1.4/zepto.min.js"></script>
 <script src="../lib/js/head.min.js"></script>
 <script src="../js/reveal.js"></script>
-
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
 
 // Full list of configuration options available at:
@@ -260,76 +260,63 @@ Reveal.initialize({
   ]
 });
 
-</script>
-
-<script>
-
-	var imgUrl = "img/workhere1.png"; //缩略图地址
-	var lineLink = "http://ads.genee.cn/hr"; //分享的链接地址
-	var descContent = '程序员的天堂，工程师的乐土，待遇优厚、福利多多，速来。'; //摘要信息
-	var shareTitle = '基理科技招新啦！'; //分享的标题
-	var appid = 'wx28dabe1d3ed202f5'; //你的公众号的APPId
-    
-	function shareFriend() {
-
-        WeixinJSBridge.invoke('sendAppMessage',{
-            "appid": appid,
-            "img_url": imgUrl,
-            "img_width": "200",
-            "img_height": "200",
-            "link": lineLink,
-            "desc": descContent,
-            "title": shareTitle
-        }, function(res) {
-            //_report('send_msg', res.err_msg);
+function initweixin(a) {
+    wx.config({
+        debug: !1,
+        appId: a.appid,
+        timestamp: a.timestamp,
+        nonceStr: a.nonceStr,
+        signature: a.signature,
+        jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ", "onMenuShareWeibo"]
+    }), wx.ready(function() {
+        wx.onMenuShareAppMessage({
+            title: a.title,
+            desc: a.desc,
+            link: a.link,
+            imgUrl: a.imgUrl,
+            type: "",
+            dataUrl: "",
+            success: function() {},
+            cancel: function() {}
+        }), wx.onMenuShareTimeline({
+            title: a.title,
+            link: a.link,
+            imgUrl: a.imgUrl,
+            success: function() {},
+            cancel: function() {}
+        }), wx.onMenuShareQQ({
+            title: a.title,
+            desc: a.desc,
+            link: a.link,
+            imgUrl: a.imgUrl,
+            success: function() {},
+            cancel: function() {}
+        }), wx.onMenuShareWeibo({
+            title: a.title,
+            desc: a.desc,
+            link: a.link,
+            imgUrl: a.imgUrl,
+            success: function() {},
+            cancel: function() {}
         })
+    })
+}
 
-    }
-
-    function shareTimeline() {
-
-        WeixinJSBridge.invoke('shareTimeline',{
-            "img_url": imgUrl,
-            "img_width": "200",
-            "img_height": "200",
-            "link": lineLink,
-            "desc": descContent,
-            "title": shareTitle
-        }, function(res) {
-           //_report('timeline', res.err_msg);
-        });
-
-    }
-
-    function shareWeibo() {
-
-        WeixinJSBridge.invoke('shareWeibo',{
-            "content": descContent,
-            "url": lineLink,
-        }, function(res) {
-            //_report('weibo', res.err_msg);
-        });
-
-    }
-
-    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
-    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-        // 发送给好友
-        WeixinJSBridge.on('menu:share:appmessage', function(argv){
-            shareFriend();
-        });
-
-        // 分享到朋友圈
-        WeixinJSBridge.on('menu:share:timeline', function(argv){
-            shareTimeline();
-        });
-
-        // 分享
-        WeixinJSBridge.on('menu:share:weibo', function(argv){
-            shareWeibo();
-        });
-
-    }, false);
+Zepto.getJSON('http://wx.genee.cn/js/sign-package?callback=?', {
+    url: window.location.href
+}, function(data){
+    console.log(data);
+    initweixin({
+        appid: 'wx28dabe1d3ed202f5',
+        timestamp: data.timestamp,
+        nonceStr: data.nonceStr,
+        signature: data.signature,
+        imgUrl: "img/workhere1.png",
+        link: "http://ads.genee.cn/hr",
+        desc: '程序员的天堂，工程师的乐土，待遇优厚、福利多多，速来。',
+        title: '基理科技招新啦!'
+    });
+});
 
 </script>
 
