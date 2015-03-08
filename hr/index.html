@@ -303,16 +303,15 @@ function initweixin(a) {
 }
 
 Zepto.getJSON('http://wx.genee.cn/js/sign-package?callback=?', {
-    url: window.location.href
+    url: "http://ads.genee.cn/hr"
 }, function(data){
-    console.log(data);
     initweixin({
-        appid: 'wx28dabe1d3ed202f5',
+        appid: data.appId,
         timestamp: data.timestamp,
         nonceStr: data.nonceStr,
         signature: data.signature,
         imgUrl: "img/workhere1.png",
-        link: "http://ads.genee.cn/hr",
+        link: data.url,
         desc: '程序员的天堂，工程师的乐土，待遇优厚、福利多多，速来。',
         title: '基理科技招新啦!'
     });
