@@ -297,7 +297,7 @@ function initweixin(a) {
 }
 
 Zepto.getJSON('http://wx.genee.cn/js/sign-package?callback=?', {
-    url: "http://ads.genee.cn/hr"
+    url: window.location.href.split('#')[0]
 }, function(data){
     initweixin({
         appid: data.appId,
